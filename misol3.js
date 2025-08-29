@@ -25,10 +25,10 @@ class Universitet {
         const dep = this.departaments.indexOf(departaments)
         if(dep == -1){
             this.departaments.splice(dep, 1)
-            console.log(`${deparName} uchirildi`);
+            console.log(`${departaments} uchirildi`);
             
         }else {
-            console.log(`${deparName} yuq`);
+            console.log(`${departaments} yuq`);
             
         }
     }
@@ -52,9 +52,26 @@ class Universitet {
     }
 
     getInfo(){
-        return `Universitet nomi: ${this.name} bulimlar soni ${this.departaments.length}`
+        return `Universitet nomi: ${this.name}`
     }
 }
 
 
+const universitet = new Universitet("Toshkent axborot texnologiyalari universiteti")
+console.log(universitet.getInfo());
 
+
+universitet.addDepartment("matematika")
+universitet.addDepartment("fizika")
+universitet.addDepartment("kimyo")
+universitet.addDepartment("informatika")
+universitet.addDepartment("geometriya")
+
+
+universitet.showAll()
+
+universitet.removeDepar("kimyo")
+universitet.removeDepar("matematika")
+
+
+universitet.showAll()
